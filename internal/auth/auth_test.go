@@ -39,7 +39,7 @@ func TestGetAPIKeyFailsForInvalidInput(t *testing.T) {
 
 	for name, testCase := range testCases {
 		t.Run(name, func(t *testing.T) {
-			if _, err := auth.GetAPIKey(testCase); err != nil {
+			if _, err := auth.GetAPIKey(testCase); err == nil {
 				t.Error(err)
 			}
 		})
